@@ -460,8 +460,11 @@ class Game {
   }
 
   async start(): Promise<void> {
-    // Show intro screen first
-    this.showIntroScreen();
+    // Show main menu first
+    this.ui.showMainMenu(() => {
+      // When user clicks "Chơi game", show intro screen
+      this.showIntroScreen();
+    });
   }
 
   private showIntroScreen(): void {

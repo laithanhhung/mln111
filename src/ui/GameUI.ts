@@ -59,6 +59,7 @@ export class GameUI {
         <div id="choice-container"></div>
         <div id="intro-container" style="display: none;"></div>
         <div id="reflection-container" style="display: none;"></div>
+        <div id="main-menu-container" style="display: none;"></div>
 
         <div id="menu-overlay" class="hidden">
           <div class="menu-content">
@@ -261,5 +262,39 @@ export class GameUI {
         }, 300);
       });
     });
+  }
+
+  showMainMenu(onStartGame: () => void): void {
+    const container = this.root.querySelector('#main-menu-container') as HTMLElement;
+    if (!container) return;
+
+    container.innerHTML = `
+      <div class="main-menu">
+        <div class="main-menu-content">
+          <div class="main-menu-logo">
+            <img src="/assets/logo.png" alt="Đêm 23:47" onerror="this.style.display='none'">
+          </div>
+          <div class="main-menu-buttons">
+            <button id="main-menu-play-btn" class="main-menu-btn primary">Chơi game</button>
+          </div>
+        </div>
+      </div>
+    `;
+
+    container.style.display = 'block';
+
+    const playBtn = container.querySelector('#main-menu-play-btn');
+    playBtn?.addEventListener('click', () => {
+      container.style.display = 'none';
+      onStartGame();
+    });
+  }
+
+  hideMainMenu(): void {
+    const container = this.root.querySelector('#main-menu-container') as HTMLElement;
+    if (container) {
+      container.style.display = 'none';
+      container.innerHTML = '';
+    }
   }
 }

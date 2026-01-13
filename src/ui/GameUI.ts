@@ -229,4 +229,37 @@ export class GameUI {
   getReflectionPrompt(): ReflectionPromptOverlay {
     return this.reflectionPrompt;
   }
+
+  showCelebrationDialog(message: string): Promise<void> {
+    return new Promise((resolve) => {
+      // Tạo overlay
+      const overlay = document.createElement('div');
+      overlay.className = 'celebration-overlay';
+      overlay.innerHTML = `
+        <div class="celebration-dialog">
+          <div class="celebration-icon">✨</div>
+          <h2 class="celebration-title">Chúc mừng!</h2>
+          <p class="celebration-message">${message}</p>
+          <button class="celebration-button">Tiếp tục</button>
+        </div>
+      `;
+
+      this.root.appendChild(overlay);
+
+      // Animation fade in
+      setTimeout(() => {
+        overlay.classList.add('show');
+      }, 10);
+
+      // Button click handler
+      const button = overlay.querySelector('.celebration-button');
+      button?.addEventListener('click', () => {
+        overlay.classList.remove('show');
+        setTimeout(() => {
+          overlay.remove();
+          resolve();
+        }, 300);
+      });
+    });
+  }
 }

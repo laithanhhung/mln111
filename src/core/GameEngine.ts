@@ -7,7 +7,8 @@ export type GameEvent =
   | { type: 'choice'; choiceId: string; prompt?: string; options: any[] }
   | { type: 'sceneChange'; sceneId: string }
   | { type: 'ending'; ending: 'A' | 'B' | 'C' | 'D' }
-  | { type: 'effect'; effect: string };
+  | { type: 'effect'; effect: string }
+  | { type: 'gameComplete' };
 
 export type GameEventListener = (event: GameEvent) => void;
 
@@ -149,6 +150,10 @@ export class GameEngine {
         this.processScene().catch(err => {
           console.error('Error processing S16:', err);
         });
+      } else if (currentSceneId === 'S16') {
+        // S16 kết thúc, emit event để main.ts xử lý đánh giá nhân vật
+        console.log('S16 ended, emitting gameComplete event');
+        this.emit({ type: 'gameComplete' } as any);
       } else {
         console.warn('Scene ended without choice:', currentSceneId);
       }

@@ -120,6 +120,11 @@ class Game {
       }
     });
 
+    // Game complete event (S16 kết thúc)
+    this.engine.on('gameComplete', () => {
+      this.showCharacterEvaluation();
+    });
+
     // Ending event - không dùng nữa, S16 sẽ được xử lý như scene bình thường
     // this.engine.on('ending', (event) => {
     //   if (event.type === 'ending') {
@@ -374,6 +379,84 @@ class Game {
     }
 
     return parts.join(' ');
+  }
+
+  private getCharacterType(): { type: string; message: string } {
+    const vars = this.engine.getStateManager().getVariables();
+    const BC = vars.BC;
+    const RealityAnchor = vars.RealityAnchor;
+    const TrustFriends = vars.TrustFriends;
+    const TrustAI = vars.TrustAI;
+    const SelfEsteem = vars.SelfEsteem;
+
+    // Kiểm tra theo thứ tự ưu tiên (từ trên xuống)
+    
+    // 1) "Kiến tạo thực tại" (best)
+    if (BC >= 75 && RealityAnchor >= 60 && TrustFriends >= 50) {
+      return {
+        type: 'Kiến tạo thực tại',
+        message: 'Chúc mừng! Bạn là Người Kiến Tạo Thực Tại — hiểu đúng điều kiện và dám hành động để đổi nó.'
+      };
+    }
+
+    // 2) "Nhà biện chứng" (đúng lý luận, khá thực tế)
+    if (BC >= 70 && RealityAnchor >= 45) {
+      return {
+        type: 'Nhà biện chứng',
+        message: 'Chúc mừng! Bạn là Nhà Biện Chứng — cân bằng lý trí và thực tiễn, không cực đoan.'
+      };
+    }
+
+    // 3) "Người neo thực tại" (rất thực tế, ít mơ mộng)
+    if (RealityAnchor >= 70 && BC < 70) {
+      return {
+        type: 'Người neo thực tại',
+        message: 'Chúc mừng! Bạn là Người Neo Thực Tại — bạn tin vào \'làm thử\' hơn là \'nghĩ cho hay\'.'
+      };
+    }
+
+    // 4) "Người kết nối" (tin người, xã hội giúp mình đứng vững)
+    if (TrustFriends >= 70 && TrustAI < 60) {
+      return {
+        type: 'Người kết nối',
+        message: 'Chúc mừng! Bạn là Người Kết Nối — bạn dùng con người và trải nghiệm thật để trưởng thành.'
+      };
+    }
+
+    // 5) "Người bạn của Lumen" (tin AI nhưng vẫn ổn)
+    if (TrustAI >= 75 && BC >= 50) {
+      return {
+        type: 'Người bạn của Lumen',
+        message: 'Chúc mừng! Bạn là Người Bạn của Lumen — dùng AI như công cụ mạnh, nhưng vẫn giữ được hướng đi.'
+      };
+    }
+
+    // 6) "Trú ẩn số" (tin AI cao, bám thực tại thấp)
+    if (TrustAI >= 75 && TrustFriends < 45 && RealityAnchor < 45) {
+      return {
+        type: 'Trú ẩn số',
+        message: 'Chúc mừng! Bạn là Kẻ Trú Ẩn Số — an toàn trong màn hình, và bước tiếp theo là kéo mình về đời thật.'
+      };
+    }
+
+    // 7) "Đang tổn thương" (tự trọng thấp)
+    if (SelfEsteem < 35) {
+      return {
+        type: 'Đang tổn thương',
+        message: 'Chúc mừng! Bạn là Người Đang Hồi Phục — bạn đã đi qua tổn thương, giờ chỉ cần thêm một hành động thật nhỏ.'
+      };
+    }
+
+    // 8) Mặc định (fallback)
+    return {
+      type: 'Đang tìm đường',
+      message: 'Chúc mừng! Bạn là Người Đang Tìm Đường — mỗi lựa chọn của bạn đang dạy bạn hiểu mình rõ hơn.'
+    };
+  }
+
+  private async showCharacterEvaluation(): Promise<void> {
+    const characterType = this.getCharacterType();
+    await this.ui.showCelebrationDialog(characterType.message);
   }
 
   async start(): Promise<void> {

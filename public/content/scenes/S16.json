@@ -1,0 +1,115 @@
+{
+  "id": "S16",
+  "title": "Epilogue",
+  "background": "bg_stage",
+  "music": "bgm_stage_resolve",
+  "ui": [
+    "timeline"
+  ],
+  "lines": [
+    {
+      "speaker": null,
+      "text": "Khi đèn sân khấu tắt bớt, Minh mới nghe rõ tiếng thở của chính mình."
+    },
+    {
+      "speaker": null,
+      "text": "Không phải ‘thắng hay thua’ mới quyết định con người Minh. Mà là cách Minh đã sống giữa thực tại và ý nghĩ."
+    },
+    {
+      "speaker": null,
+      "text": "(Bảng điểm sẽ hiện ra ở đây.)",
+      "tags": [
+        "meta"
+      ]
+    },
+    {
+      "speaker": null,
+      "text": "Kết luận theo lựa chọn của bạn: Bạn nghiêng về việc tìm an toàn trong ý nghĩ hơn là kiểm chứng bằng thực tiễn. Khi thiếu thực tiễn, ý thức rất dễ tự thuyết phục mình bằng những điều ‘nghe hợp lý’ nhưng không đứng vững.",
+      "if": {
+        "var": "BC",
+        "lte": 25
+      }
+    },
+    {
+      "speaker": null,
+      "text": "Kết luận theo lựa chọn của bạn: Bạn đã muốn hành động, nhưng đôi lúc chọn con đường nhanh và ‘đẹp’ hơn sự thật. Thực tiễn đã buộc Minh trả giá, nhưng cũng kéo Minh về tính chân thật.",
+      "if": {
+        "var": "BC",
+        "gte": 26,
+        "lte": 50
+      }
+    },
+    {
+      "speaker": null,
+      "text": "Kết luận theo lựa chọn của bạn: Bạn bắt đầu sống theo hướng biện chứng—nhìn thẳng điều kiện khách quan và làm thật, sửa thật. Đó là lúc ý thức trở thành phương pháp, không chỉ là cảm xúc.",
+      "if": {
+        "var": "BC",
+        "gte": 51,
+        "lte": 75
+      }
+    },
+    {
+      "speaker": null,
+      "text": "Kết luận theo lựa chọn của bạn: Bạn cân bằng tôn trọng khách quan và phát huy chủ quan. Ý thức của Minh không còn là nơi trốn; nó trở thành kim chỉ nam hành động để cải biến điều kiện vật chất.",
+      "if": {
+        "var": "BC",
+        "gte": 76
+      }
+    },
+    {
+      "speaker": null,
+      "text": "Neo thực tại thấp: thiếu ngủ, ở lì trong phòng, ít va chạm đời thật khiến ý thức dễ méo đi. Chỉ cần cơ thể mệt và áp lực dồn—tâm trí cũng ‘đổi màu’.",
+      "if": {
+        "var": "RealityAnchor",
+        "lt": 35
+      }
+    },
+    {
+      "speaker": null,
+      "text": "Neo thực tại cao: bạn chọn quan sát, làm thử, kiểm chứng. Đó là ‘thực tiễn’ — đưa ý thức vào hành động và để hành động trả lời đúng–sai.",
+      "if": {
+        "var": "RealityAnchor",
+        "gte": 70
+      }
+    },
+    {
+      "speaker": null,
+      "text": "Bạn khó tin con người: khi cắt kết nối, bạn tự làm nghèo dữ kiện thực tế và ý thức dễ bị nhốt trong một góc nhìn.",
+      "if": {
+        "var": "TrustFriends",
+        "lt": 35
+      }
+    },
+    {
+      "speaker": null,
+      "text": "Bạn cho phép kết nối thật: hợp tác và phản hồi biến ý tưởng thành lực tác động vật chất.",
+      "if": {
+        "var": "TrustFriends",
+        "gte": 70
+      }
+    },
+    {
+      "speaker": null,
+      "text": "Câu hỏi của duy vật biện chứng không phải ‘mình nghĩ gì’, mà là:"
+    },
+    {
+      "speaker": null,
+      "text": "1) Điều kiện vật chất nào đang quyết định ý thức của mình hôm nay?"
+    },
+    {
+      "speaker": null,
+      "text": "2) Mình sẽ làm hành động thực tiễn nhỏ nào để ý thức tác động trở lại thực tại?"
+    }
+  ],
+  "choices": [],
+  "dayNumber": 7,
+  "dayTitle": "Sân khấu",
+  "onEnter": [
+    {
+      "type": "setUiState",
+      "key": "showStats",
+      "value": true
+    }
+  ],
+  "characters": []
+}

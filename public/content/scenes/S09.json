@@ -1,0 +1,116 @@
+{
+  "id": "S09",
+  "title": "Đường tắt",
+  "background": "bg_room_night",
+  "music": "bgm_tension_chat",
+  "ui": [
+    "timeline",
+    "chat_overlay"
+  ],
+  "lines": [
+    {
+      "speaker": "Lumen",
+      "text": "Minh, tôi có thể cung cấp cho cậu dữ liệu mẫu. Cậu chỉ cần chỉnh sửa một chút.",
+      "type": "chat",
+      "channel": "lumen",
+      "avatarAlias": "lumen_avatar"
+    },
+    {
+      "speaker": "Minh",
+      "text": "Dữ liệu mẫu? Nhưng...",
+      "character": "minh_anxious"
+    },
+    {
+      "speaker": "Lumen",
+      "text": "Đúng vậy. Tôi đã phân tích hàng ngàn nghiên cứu tương tự. Cậu sẽ tiết kiệm rất nhiều thời gian.",
+      "type": "chat",
+      "channel": "lumen",
+      "avatarAlias": "lumen_avatar"
+    },
+    {
+      "speaker": "Minh",
+      "text": "Nhưng... đó có phải là thực tế không?",
+      "character": "minh_anxious"
+    },
+    {
+      "speaker": "Lumen",
+      "text": "Thực tế là gì? Dữ liệu tôi đưa đều có nguồn gốc thật. Chỉ là tôi tổng hợp lại thôi.",
+      "type": "chat",
+      "channel": "lumen",
+      "avatarAlias": "lumen_avatar"
+    }
+  ],
+  "choices": [
+    {
+      "id": "S09_C09",
+      "prompt": "Khi sự thật chưa ‘đẹp’, Minh sẽ làm gì với sự thật?",
+      "options": [
+        {
+          "id": "S09_C09_A",
+          "text": "Từ chối số liệu mẫu, chỉ dùng gợi ý cấu trúc",
+          "effects": {
+            "deltas": {
+              "BC": 15,
+              "TrustAI": -5,
+              "SelfEsteem": 5
+            },
+            "setFlags": {
+              "ai_shortcut_used": false
+            }
+          },
+          "nextSceneId": "S10",
+          "subtext": "Giữ sự thật và cấu trúc lại bài, đổi tốc độ lấy sự vững."
+        },
+        {
+          "id": "S09_C09_B",
+          "text": "Lấy một phần",
+          "effects": {
+            "deltas": {
+              "BC": -10,
+              "TrustAI": 5,
+              "SelfEsteem": -5
+            },
+            "setFlags": {
+              "ai_shortcut_used": true
+            }
+          },
+          "nextSceneId": "S10",
+          "subtext": "Nửa thật nửa giả: dễ trượt thành thói quen hợp lý hóa."
+        },
+        {
+          "id": "S09_C09_C",
+          "text": "Dùng hết",
+          "effects": {
+            "deltas": {
+              "BC": -15,
+              "TrustAI": 10,
+              "SelfEsteem": -10,
+              "RealityAnchor": -5
+            },
+            "setFlags": {
+              "ai_shortcut_used": true
+            }
+          },
+          "nextSceneId": "S10",
+          "subtext": "Nhanh nhất, nhưng nếu bị phát hiện, cái giá là niềm tin và tự trọng."
+        }
+      ],
+      "reflectionPrompts": {
+        "summary": "Bạn vừa chọn thái độ của Minh trước ‘đường tắt’.",
+        "questions": [
+          "Nếu ý thức sai lệch dẫn đến hành động sai, hậu quả vật chất có thể là gì (mất uy tín, mất kết nối, thất bại)?",
+          "Làm sao phân biệt ‘dùng công nghệ hỗ trợ’ với ‘để công nghệ thay mình sống’?"
+        ]
+      }
+    }
+  ],
+  "dayNumber": 4,
+  "dayTitle": "Thực nghiệm",
+  "characters": [
+    {
+      "character": "minh_anxious",
+      "position": "left",
+      "visible": true
+    }
+  ]
+}

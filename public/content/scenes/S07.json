@@ -1,0 +1,119 @@
+{
+  "id": "S07",
+  "title": "Vấn đề vật chất thật",
+  "background": "bg_cafe",
+  "music": "bgm_hope_practice",
+  "ui": [
+    "timeline"
+  ],
+  "lines": [
+    {
+      "speaker": null,
+      "text": "Quán của Bác Tư nằm trong một con hẻm nhỏ. Gần đây khách thưa hẳn."
+    },
+    {
+      "speaker": "Bác Tư",
+      "text": "Không phải ai ghét quán bác. Chỉ là… hẻm tối, rác nhiều, đi qua là ngại.",
+      "character": "bac_tu_kind"
+    },
+    {
+      "speaker": null,
+      "text": "Minh nhìn quanh: ánh đèn yếu, thùng rác quá đầy, mùi ẩm sau mưa."
+    },
+    {
+      "speaker": "Bác Tư",
+      "text": "Chào cháu. Có vẻ cháu đang lo lắng gì đó?",
+      "character": "bac_tu_kind"
+    },
+    {
+      "speaker": "Minh",
+      "text": "Dạ... cháu đang gặp vấn đề.",
+      "character": "minh_neutral"
+    },
+    {
+      "speaker": "Bác Tư",
+      "text": "Vấn đề gì? Kể bác nghe xem.",
+      "character": "bac_tu_kind"
+    },
+    {
+      "speaker": "Minh",
+      "text": "Cháu... cháu không biết bắt đầu từ đâu.",
+      "character": "minh_neutral"
+    },
+    {
+      "speaker": "Bác Tư",
+      "text": "Thì cứ bắt đầu từ điều thực tế nhất. Điều gì đang xảy ra ngay bây giờ?",
+      "character": "bac_tu_kind"
+    }
+  ],
+  "choices": [
+    {
+      "id": "S07_C07",
+      "prompt": "Bác Tư nói ‘bắt đầu từ điều thực tế nhất’. Minh sẽ biến bức xúc thành điều gì?",
+      "options": [
+        {
+          "id": "S07_C07_A",
+          "text": "Chỉ than phiền",
+          "effects": {
+            "deltas": {
+              "BC": -5,
+              "TrustFriends": -5
+            }
+          },
+          "nextSceneId": "S08",
+          "subtext": "Xả bớt cảm xúc, nhưng không thay đổi được điều kiện."
+        },
+        {
+          "id": "S07_C07_B",
+          "text": "Khảo sát nguyên nhân (đi hỏi xung quanh)",
+          "effects": {
+            "deltas": {
+              "BC": 10,
+              "RealityAnchor": 10,
+              "TrustFriends": 5
+            },
+            "setFlags": {
+              "collected_data": true
+            }
+          },
+          "nextSceneId": "S08",
+          "subtext": "Thu thập dữ kiện thật để hiểu nguyên nhân vật chất và tìm điểm can thiệp."
+        },
+        {
+          "id": "S07_C07_C",
+          "text": "\"Kệ\"",
+          "effects": {
+            "deltas": {
+              "BC": -10,
+              "RealityAnchor": -5
+            }
+          },
+          "nextSceneId": "S08",
+          "subtext": "Trốn tránh, và điều kiện xấu sẽ tiếp tục kéo ý thức đi xuống."
+        }
+      ],
+      "reflectionPrompts": {
+        "summary": "Bạn vừa chọn Minh sẽ ‘đứng trong thực tế’ hay chỉ đứng trong lời nói.",
+        "questions": [
+          "Trong scene này, ‘vật chất’ cụ thể đang tạo ra trải nghiệm gì (tối, rác, mùi ẩm, tiếng ồn)?",
+          "Một hành động thực tiễn nhỏ nào có thể làm đổi trải nghiệm đó ngay lập tức?"
+        ]
+      }
+    }
+  ],
+  "dayNumber": 3,
+  "dayTitle": "Cuộc thi",
+  "onEnter": [],
+  "characters": [
+    {
+      "character": "minh_neutral",
+      "position": "left",
+      "visible": true
+    },
+    {
+      "character": "bac_tu_kind",
+      "position": "right",
+      "visible": true
+    }
+  ]
+}

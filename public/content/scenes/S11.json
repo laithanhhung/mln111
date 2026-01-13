@@ -1,0 +1,105 @@
+{
+  "id": "S11",
+  "title": "Dữ liệu trái kỳ vọng",
+  "background": "bg_room_night",
+  "music": "bgm_hurt_silence",
+  "ui": [
+    "timeline"
+  ],
+  "lines": [
+    {
+      "speaker": null,
+      "text": "Đêm khuya. Màn hình máy tính sáng."
+    },
+    {
+      "speaker": "Minh",
+      "text": "Dữ liệu... không khớp. Không khớp gì cả.",
+      "tags": [
+        "blur"
+      ],
+      "character": "minh_anxious"
+    },
+    {
+      "speaker": null,
+      "text": "Chữ trên màn hình như mờ đi. Mắt cay.",
+      "tags": [
+        "blur"
+      ]
+    },
+    {
+      "speaker": "Minh",
+      "text": "Mình... mình vô dụng sao?",
+      "character": "minh_anxious"
+    }
+  ],
+  "choices": [
+    {
+      "id": "S11_C11",
+      "prompt": "Khi thực tế phản lại kỳ vọng, Minh nên thay đổi điều gì trước?",
+      "options": [
+        {
+          "id": "S11_C11_A",
+          "text": "\"Mình vô dụng\"",
+          "effects": {
+            "deltas": {
+              "BC": -10,
+              "SelfEsteem": -15
+            }
+          },
+          "nextSceneId": "S12",
+          "subtext": "Tự phủ định khiến SelfEsteem tụt nhanh, dễ bỏ cuộc."
+        },
+        {
+          "id": "S11_C11_B",
+          "text": "\"Tại điều kiện, thôi\"",
+          "effects": {
+            "deltas": {
+              "BC": -10,
+              "RealityAnchor": -10
+            }
+          },
+          "nextSceneId": "S12",
+          "subtext": "Đổ hết cho điều kiện khiến Minh thụ động, mất năng động chủ quan."
+        },
+        {
+          "id": "S11_C11_C",
+          "text": "Điều chỉnh giả thuyết, làm lại",
+          "effects": {
+            "deltas": {
+              "BC": 10,
+              "SelfEsteem": 5,
+              "RealityAnchor": 10
+            },
+            "setFlags": {
+              "iteration": true
+            }
+          },
+          "nextSceneId": "S12",
+          "subtext": "Dùng thất bại như dữ liệu: sửa giả thuyết, sửa cách làm, thử lại."
+        }
+      ],
+      "reflectionPrompts": {
+        "summary": "Bạn vừa chọn cách Minh tự nói chuyện với chính mình lúc suy sụp.",
+        "questions": [
+          "Nếu vật chất quyết định ý thức, cơ thể và môi trường (thiếu ngủ, mưa, áp lực deadline) đang làm Minh nghĩ lệch ra sao?",
+          "Một hành động vật chất nhỏ (ngủ, ra ngoài, nhờ người) có thể kéo ý thức lên lại không?"
+        ]
+      }
+    }
+  ],
+  "dayNumber": 5,
+  "dayTitle": "Khủng hoảng",
+  "onEnter": [
+    {
+      "type": "playSfx",
+      "id": "sfx_rain_window"
+    }
+  ],
+  "characters": [
+    {
+      "character": "minh_anxious",
+      "position": "left",
+      "visible": true
+    }
+  ]
+}

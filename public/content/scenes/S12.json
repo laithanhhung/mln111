@@ -1,0 +1,91 @@
+{
+  "id": "S12",
+  "title": "Phản ánh sáng tạo",
+  "background": "bg_room_day",
+  "music": "bgm_hope_practice",
+  "ui": [
+    "timeline"
+  ],
+  "lines": [
+    {
+      "speaker": "Minh",
+      "text": "Phản ánh sáng tạo... không phải sao chép thụ động.",
+      "character": "minh_determined"
+    },
+    {
+      "speaker": null,
+      "text": "Minh nhớ lại lời thầy. Ý thức không chỉ phản ánh, mà còn sáng tạo."
+    },
+    {
+      "speaker": "Minh",
+      "text": "Vậy mình phải hành động. Không chỉ nghĩ, mà phải làm.",
+      "character": "minh_determined"
+    }
+  ],
+  "choices": [
+    {
+      "id": "S12_C12",
+      "prompt": "Ý thức ‘phản ánh sáng tạo’ nghĩa là biến suy nghĩ thành hành động. Minh sẽ làm theo hướng nào?",
+      "options": [
+        {
+          "id": "S12_C12_A",
+          "text": "Làm một mình",
+          "effects": {
+            "deltas": {
+              "BC": -5,
+              "TrustFriends": -5,
+              "SelfEsteem": 5
+            }
+          },
+          "nextSceneId": "S13",
+          "subtext": "Tự làm giúp nhanh, nhưng dễ kiệt sức và thiếu phản hồi thực tế."
+        },
+        {
+          "id": "S12_C12_B",
+          "text": "Kêu gọi nhóm + phân vai",
+          "effects": {
+            "deltas": {
+              "BC": 10,
+              "TrustFriends": 10,
+              "RealityAnchor": 5
+            },
+            "setFlags": {
+              "made_team": true
+            }
+          },
+          "nextSceneId": "S13",
+          "subtext": "Hợp tác biến lý luận thành ‘sức mạnh vật chất’ (phân vai, cam kết, làm thật)."
+        },
+        {
+          "id": "S12_C12_C",
+          "text": "Chờ người khác làm",
+          "effects": {
+            "deltas": {
+              "BC": -10,
+              "TrustFriends": -10,
+              "SelfEsteem": -5
+            }
+          },
+          "nextSceneId": "S13",
+          "subtext": "Chờ đợi khiến thời gian trôi và cơ hội mất dần."
+        }
+      ],
+      "reflectionPrompts": {
+        "summary": "Bạn vừa chọn cách Minh biến ý thức thành thực tiễn.",
+        "questions": [
+          "Trong đời thật, vì sao hợp tác có thể biến một ý tưởng thành lực tác động vật chất?",
+          "Nếu Minh chọn làm một mình, điều gì sẽ mất: dữ kiện, hỗ trợ, hay niềm tin vào con người?"
+        ]
+      }
+    }
+  ],
+  "dayNumber": 5,
+  "dayTitle": "Khủng hoảng",
+  "characters": [
+    {
+      "character": "minh_determined",
+      "position": "left",
+      "visible": true
+    }
+  ]
+}

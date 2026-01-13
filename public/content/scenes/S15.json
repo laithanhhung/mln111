@@ -1,0 +1,59 @@
+{
+  "id": "S15",
+  "title": "Thuyết trình",
+  "background": "bg_stage",
+  "music": "bgm_stage_resolve",
+  "ui": [
+    "timeline"
+  ],
+  "lines": [
+    {
+      "speaker": null,
+      "text": "Sân khấu. Ánh đèn. Khán giả."
+    },
+    {
+      "speaker": "Minh",
+      "text": "Xin chào mọi người. Hôm nay mình muốn kể một câu chuyện.",
+      "character": "minh_determined"
+    },
+    {
+      "speaker": null,
+      "text": "Minh bắt đầu thuyết trình. Kể về hành trình 7 ngày qua."
+    },
+    {
+      "speaker": "Minh",
+      "text": "Mình từng nghĩ mọi thứ chỉ là cảm xúc. Nhưng rồi mình nhận ra: điều kiện sống thật sự đang định hình cảm xúc đó.",
+      "character": "minh_determined"
+    },
+    {
+      "speaker": "Minh",
+      "text": "Vật chất quyết định ý thức. Nhưng ý thức cũng tác động lại qua thực tiễn.",
+      "character": "minh_determined"
+    },
+    {
+      "speaker": "Minh",
+      "text": "Thực tiễn là tiêu chuẩn. Không có đường tắt thật sự.",
+      "character": "minh_determined"
+    },
+    {
+      "speaker": null,
+      "text": "Thuyết trình kết thúc. Tiếng vỗ tay vang lên."
+    }
+  ],
+  "choices": [],
+  "onEnter": [
+    {
+      "type": "playSfx",
+      "id": "sfx_crowd_murmur"
+    }
+  ],
+  "dayNumber": 7,
+  "dayTitle": "Sân khấu",
+  "characters": [
+    {
+      "character": "minh_determined",
+      "position": "left",
+      "visible": true
+    }
+  ]
+}

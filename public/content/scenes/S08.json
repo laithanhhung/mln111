@@ -1,0 +1,113 @@
+{
+  "id": "S08",
+  "title": "Cuộc thi ‘Thực và Ý’",
+  "background": "bg_school_class",
+  "music": "bgm_hope_practice",
+  "ui": [
+    "timeline",
+    "chat_overlay"
+  ],
+  "lines": [
+    {
+      "speaker": "Thầy Hậu",
+      "text": "Có một cuộc thi nghiên cứu nhỏ. Các em có thể tham gia.",
+      "character": "thay_hau_calm"
+    },
+    {
+      "speaker": null,
+      "text": "Minh nhìn vào thông báo. Deadline: 7 ngày."
+    },
+    {
+      "speaker": "Minh",
+      "text": "7 ngày... mình có thể làm được không?",
+      "character": "minh_neutral"
+    },
+    {
+      "speaker": null,
+      "text": "Lumen lại nhắn: \"Tôi có thể giúp cậu.\""
+    },
+    {
+      "speaker": "Lumen",
+      "text": "Nếu cậu muốn thắng, mình có thể làm nhanh. Nhưng cậu có muốn ‘đúng’ không?",
+      "type": "chat",
+      "channel": "lumen",
+      "avatarAlias": "lumen_avatar"
+    }
+  ],
+  "choices": [
+    {
+      "id": "S08_C08",
+      "prompt": "Minh sẽ tham gia cuộc thi bằng cách nào để vừa ‘đúng sự thật’ vừa ‘đủ sức thuyết phục’?",
+      "options": [
+        {
+          "id": "S08_C08_A",
+          "text": "Viết lời hay, ít kiểm chứng",
+          "effects": {
+            "deltas": {
+              "BC": -10,
+              "TrustAI": 5
+            }
+          },
+          "nextSceneId": "S09",
+          "subtext": "Nhanh và nghe thuyết phục, nhưng dễ ‘đổ’ khi bị hỏi xoáy về thực tiễn."
+        },
+        {
+          "id": "S08_C08_B",
+          "text": "Khảo sát/phỏng vấn/thử giải pháp nhỏ",
+          "effects": {
+            "deltas": {
+              "BC": 15,
+              "RealityAnchor": 10,
+              "TrustFriends": 5
+            }
+          },
+          "nextSceneId": "S09",
+          "subtext": "Chậm và mệt hơn, nhưng có bằng chứng và hiểu điều kiện khách quan."
+        },
+        {
+          "id": "S08_C08_C",
+          "text": "Dựa hoàn toàn vào AI (luận điểm/số liệu)",
+          "effects": {
+            "deltas": {
+              "BC": -15,
+              "TrustAI": 15,
+              "RealityAnchor": -10
+            },
+            "setFlags": {
+              "ai_dependency": true
+            }
+          },
+          "nextSceneId": "S09",
+          "subtext": "Bóng bẩy và nhanh, nhưng đánh đổi sự thật và nguy cơ bị lật tẩy."
+        }
+      ],
+      "reflectionPrompts": {
+        "summary": "Bạn vừa chọn ‘phương pháp’ cho Minh trước deadline 7 ngày.",
+        "questions": [
+          "Vì sao ‘đường tắt’ hấp dẫn nhất khi ta đang yếu? Nó hứa cho Minh điều gì và lấy đi điều gì?",
+          "Trong triết học, tại sao thực tiễn lại là tiêu chuẩn kiểm chứng? Minh sẽ kiểm chứng bằng cách nào?"
+        ]
+      }
+    }
+  ],
+  "dayNumber": 3,
+  "dayTitle": "Cuộc thi",
+  "onEnter": [
+    {
+      "type": "playSfx",
+      "id": "sfx_message_pop"
+    }
+  ],
+  "characters": [
+    {
+      "character": "minh_neutral",
+      "position": "left",
+      "visible": true
+    },
+    {
+      "character": "thay_hau_calm",
+      "position": "right",
+      "visible": true
+    }
+  ]
+}

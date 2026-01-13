@@ -1,0 +1,85 @@
+{
+  "id": "S10",
+  "title": "Thực nghiệm",
+  "background": "bg_alley",
+  "music": "bgm_hope_practice",
+  "ui": [
+    "timeline"
+  ],
+  "lines": [
+    {
+      "speaker": null,
+      "text": "Minh bắt đầu thực nghiệm nhỏ. Hỏi mọi người. Ghi chép."
+    },
+    {
+      "speaker": "Minh",
+      "text": "Kết quả... không như mình nghĩ.",
+      "character": "minh_determined"
+    },
+    {
+      "speaker": null,
+      "text": "Dữ liệu thực tế khác với lý thuyết. Khác với những gì AI nói."
+    },
+    {
+      "speaker": "Minh",
+      "text": "Vậy... mình phải làm sao?",
+      "character": "minh_determined"
+    }
+  ],
+  "choices": [
+    {
+      "id": "S10_C10",
+      "prompt": "Thực tế không giống dự đoán. Minh sẽ phản ứng ra sao để ý thức trở thành ‘phản ánh sáng tạo’?",
+      "options": [
+        {
+          "id": "S10_C10_A",
+          "text": "Điều chỉnh phương pháp, làm lại",
+          "effects": {
+            "deltas": {
+              "BC": 10,
+              "RealityAnchor": 10
+            }
+          },
+          "nextSceneId": "S11",
+          "subtext": "Chấp nhận dữ liệu thật, sửa cách làm, tiến từng bước."
+        },
+        {
+          "id": "S10_C10_B",
+          "text": "Bỏ qua, dùng dữ liệu AI",
+          "effects": {
+            "deltas": {
+              "BC": -10,
+              "TrustAI": 5,
+              "RealityAnchor": -10
+            }
+          },
+          "nextSceneId": "S11",
+          "subtext": "Bỏ qua dữ liệu thật để giữ cảm giác ‘mình đúng’—rủi ro lệch khỏi thực tiễn."
+        }
+      ],
+      "reflectionPrompts": {
+        "summary": "Bạn vừa chọn cách Minh đối diện với thực tiễn.",
+        "questions": [
+          "Điều gì trong thực tiễn khiến kế hoạch ban đầu ‘sai’? Nó là sai ở giả thuyết hay sai ở điều kiện?",
+          "Bạn sẽ đo ‘thành công’ bằng ấn tượng hay bằng thay đổi thật?"
+        ]
+      }
+    }
+  ],
+  "dayNumber": 4,
+  "dayTitle": "Thực nghiệm",
+  "onEnter": [
+    {
+      "type": "playSfx",
+      "id": "sfx_crowd_murmur",
+      "volume": 0.15
+    }
+  ],
+  "characters": [
+    {
+      "character": "minh_determined",
+      "position": "left",
+      "visible": true
+    }
+  ]
+}

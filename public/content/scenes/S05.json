@@ -1,0 +1,90 @@
+{
+  "id": "S05",
+  "title": "Tiết triết học",
+  "background": "bg_school_class",
+  "music": "bgm_calm_room",
+  "ui": [
+    "timeline"
+  ],
+  "lines": [
+    {
+      "speaker": "Thầy Hậu",
+      "text": "Hôm nay chúng ta sẽ bàn về một câu hỏi cơ bản: Vật chất và ý thức, cái nào có trước?",
+      "character": "thay_hau_calm"
+    },
+    {
+      "speaker": null,
+      "text": "Lớp học im lặng. Minh chú ý lắng nghe."
+    },
+    {
+      "speaker": "Thầy Hậu",
+      "text": "Có người nói ý thức quyết định tất cả. Có người nói vật chất chỉ là thứ thụ động. Nhưng thực tế thì sao?",
+      "character": "thay_hau_calm"
+    },
+    {
+      "speaker": "Minh",
+      "text": "Thực tế...",
+      "tags": [
+        "pause"
+      ],
+      "character": "minh_neutral"
+    },
+    {
+      "speaker": "Thầy Hậu",
+      "text": "Vật chất quyết định ý thức. Nhưng ý thức cũng tác động trở lại vật chất qua thực tiễn.",
+      "character": "thay_hau_calm"
+    }
+  ],
+  "choices": [
+    {
+      "id": "S05_C05",
+      "prompt": "Nghe bài triết, Minh sẽ làm gì để biến lý thuyết thành ‘cái mình sống được’ chứ không chỉ ghi nhớ?",
+      "options": [
+        {
+          "id": "S05_C05_A",
+          "text": "Ghi chép cẩn thận",
+          "effects": {
+            "deltas": {
+              "BC": 5
+            }
+          },
+          "nextSceneId": "S06",
+          "subtext": "Ghi lại khái niệm để hiểu cấu trúc lập luận."
+        },
+        {
+          "id": "S05_C05_B",
+          "text": "Nghĩ về tình huống của mình",
+          "effects": {
+            "deltas": {
+              "BC": 10,
+              "SelfEsteem": 5
+            }
+          },
+          "nextSceneId": "S06",
+          "subtext": "Liên hệ vào tình huống bản thân để thấy ‘vật chất–ý thức’ đang vận hành thật."
+        }
+      ],
+      "reflectionPrompts": {
+        "summary": "Bạn vừa chọn cách tiếp nhận lý thuyết.",
+        "questions": [
+          "Trong câu chuyện của Minh, ‘vật chất’ cụ thể là những gì (môi trường, group chat, cơ thể, áp lực)?",
+          "Nếu ý thức tác động trở lại qua thực tiễn, Minh nên làm thử điều gì trong 24 giờ tới?"
+        ]
+      }
+    }
+  ],
+  "dayNumber": 2,
+  "dayTitle": "Quan điểm",
+  "characters": [
+    {
+      "character": "minh_neutral",
+      "position": "left",
+      "visible": true
+    },
+    {
+      "character": "thay_hau_calm",
+      "position": "right",
+      "visible": true
+    }
+  ]
+}

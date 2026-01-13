@@ -1,0 +1,108 @@
+{
+  "id": "S06",
+  "title": "Tranh luận",
+  "background": "bg_canteen",
+  "music": "bgm_tension_chat",
+  "ui": [
+    "timeline",
+    "chat_overlay"
+  ],
+  "lines": [
+    {
+      "speaker": "Khoa",
+      "text": "Minh, cậu có biết ai leak nhật ký không?",
+      "character": "khoa_skeptical"
+    },
+    {
+      "speaker": "Minh",
+      "text": "Không... mình không biết.",
+      "character": "minh_neutral"
+    },
+    {
+      "speaker": "Lan",
+      "text": "Để mình xem lại ảnh đó. Có vẻ như...",
+      "character": "lan_neutral"
+    },
+    {
+      "speaker": null,
+      "text": "Lan nhìn kỹ bức ảnh. Có gì đó quen thuộc."
+    },
+    {
+      "speaker": "Lan",
+      "text": "Góc này... mình đã thấy ở đâu đó.",
+      "character": "lan_neutral"
+    }
+  ],
+  "choices": [
+    {
+      "id": "S06_C06",
+      "prompt": "Để bước tiếp, Minh nên hiểu mối quan hệ vật chất–ý thức theo hướng nào?",
+      "options": [
+        {
+          "id": "S06_C06_A",
+          "text": "\"Ý thức thụ động thôi\" (siêu hình)",
+          "effects": {
+            "deltas": {
+              "BC": -10,
+              "RealityAnchor": 5,
+              "SelfEsteem": -5
+            }
+          },
+          "nextSceneId": "S07",
+          "subtext": "Nghe ‘thực tế’ nhưng làm Minh dễ thụ động: ý thức bị coi như bóng mờ."
+        },
+        {
+          "id": "S06_C06_B",
+          "text": "\"Tinh thần là đủ\" (duy tâm)",
+          "effects": {
+            "deltas": {
+              "BC": -10,
+              "SelfEsteem": 5,
+              "RealityAnchor": -10
+            }
+          },
+          "nextSceneId": "S07",
+          "subtext": "Tạo động lực nhanh, nhưng dễ duy ý chí nếu bỏ qua điều kiện khách quan."
+        },
+        {
+          "id": "S06_C06_C",
+          "text": "\"Vật chất quyết định nhưng ý thức tác động lại qua thực tiễn\"",
+          "effects": {
+            "deltas": {
+              "BC": 10,
+              "RealityAnchor": 5
+            }
+          },
+          "nextSceneId": "S07",
+          "subtext": "Cân bằng: nhìn đúng điều kiện và dám hành động để đổi điều kiện."
+        }
+      ],
+      "reflectionPrompts": {
+        "summary": "Bạn vừa chọn ‘lăng kính’ triết học cho Minh.",
+        "questions": [
+          "Một niềm tin (ý thức) sai lệch có thể khiến Minh hành động sai theo cách nào?",
+          "Nếu Minh muốn thay đổi tình huống, Minh cần tác động vào ‘điều kiện vật chất’ nào trước?"
+        ]
+      }
+    }
+  ],
+  "dayNumber": 2,
+  "dayTitle": "Quan điểm",
+  "characters": [
+    {
+      "character": "khoa_skeptical",
+      "position": "left",
+      "visible": true
+    },
+    {
+      "character": "minh_neutral",
+      "position": "center",
+      "visible": true
+    },
+    {
+      "character": "lan_neutral",
+      "position": "right",
+      "visible": true
+    }
+  ]
+}

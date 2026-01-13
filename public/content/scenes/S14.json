@@ -1,0 +1,93 @@
+{
+  "id": "S14",
+  "title": "Đêm trước thuyết trình",
+  "background": "bg_room_night",
+  "music": "bgm_tension_chat",
+  "ui": [
+    "timeline"
+  ],
+  "lines": [
+    {
+      "speaker": null,
+      "text": "Đêm trước thuyết trình. Mọi thứ đã sẵn sàng."
+    },
+    {
+      "speaker": "Minh",
+      "text": "Mình sẽ nói gì? Nói thật hay tô vẽ?",
+      "character": "minh_anxious"
+    },
+    {
+      "speaker": null,
+      "text": "Nhìn lại hành trình. Những lựa chọn. Những hậu quả."
+    },
+    {
+      "speaker": "Minh",
+      "text": "Thực tiễn là tiêu chuẩn. Mình phải trung thực.",
+      "character": "minh_anxious"
+    }
+  ],
+  "choices": [
+    {
+      "id": "S14_C14",
+      "prompt": "Trước giờ thuyết trình, Minh chọn trung thực hay tô vẽ — và chấp nhận cái giá của lựa chọn đó?",
+      "options": [
+        {
+          "id": "S14_C14_A",
+          "text": "Nói rõ AI chỉ hỗ trợ, thành quả do thực nghiệm/nhóm",
+          "effects": {
+            "deltas": {
+              "BC": 10,
+              "SelfEsteem": 10
+            }
+          },
+          "nextSceneId": "S15",
+          "subtext": "Khó hơn nhưng đứng vững: phù hợp ‘tôn trọng khách quan’."
+        },
+        {
+          "id": "S14_C14_B",
+          "text": "Gọi AI là đồng tác giả chính",
+          "effects": {
+            "deltas": {
+              "BC": -5,
+              "TrustAI": 10,
+              "TrustFriends": -5
+            }
+          },
+          "nextSceneId": "S15",
+          "subtext": "Tạo ấn tượng nhanh, nhưng dễ làm mờ công sức nhóm và thực tiễn."
+        },
+        {
+          "id": "S14_C14_C",
+          "text": "Giấu thực nghiệm, chỉ show slide đẹp",
+          "effects": {
+            "deltas": {
+              "BC": -10,
+              "SelfEsteem": -5
+            },
+            "setFlags": {
+              "fake_presentation": true
+            }
+          },
+          "nextSceneId": "S15",
+          "subtext": "Đẹp mắt nhưng rỗng: nếu bị hỏi sâu, dễ sụp đổ."
+        }
+      ],
+      "reflectionPrompts": {
+        "summary": "Bạn vừa chọn ‘động cơ’ và ‘trách nhiệm’ cho Minh trước công chúng.",
+        "questions": [
+          "Trong triết học, vì sao ‘tôn trọng khách quan’ là nguyên tắc phương pháp luận đầu tiên?",
+          "Một lời nói sai có thể dẫn đến hành động sai như thế nào trong thực tiễn?"
+        ]
+      }
+    }
+  ],
+  "dayNumber": 6,
+  "dayTitle": "Đối mặt",
+  "characters": [
+    {
+      "character": "minh_anxious",
+      "position": "left",
+      "visible": true
+    }
+  ]
+}

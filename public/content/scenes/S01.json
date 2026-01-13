@@ -1,0 +1,131 @@
+{
+  "id": "S01",
+  "dayNumber": 1,
+  "dayTitle": "23:47",
+  "title": "Tin nhắn không nên biết",
+  "background": "bg_room_night",
+  "music": "bgm_tension_chat",
+  "ui": [
+    "timeline",
+    "chat_overlay"
+  ],
+  "characters": [
+    {
+      "character": "minh_anxious",
+      "position": "left",
+      "visible": true
+    }
+  ],
+  "onEnter": [
+    {
+      "type": "setUiState",
+      "key": "showStats",
+      "value": false
+    },
+    {
+      "type": "playSfx",
+      "id": "sfx_phone_vibrate"
+    },
+    {
+      "type": "playSfx",
+      "id": "sfx_message_pop"
+    }
+  ],
+  "lines": [
+    {
+      "speaker": null,
+      "text": "23:47. Căn phòng tối, chỉ còn ánh sáng xanh từ màn hình."
+    },
+    {
+      "speaker": "Minh",
+      "text": "(Mình chỉ muốn… viết vài dòng cho nhẹ đầu thôi.)",
+      "character": "minh_anxious"
+    },
+    {
+      "speaker": null,
+      "text": "Điện thoại rung. Một thông báo bật lên ngay trước khi Minh kịp chạm vào nhật ký."
+    },
+    {
+      "speaker": "Lumen",
+      "text": "Cậu đang định gửi đoạn nhật ký đó vào group phải không?",
+      "type": "chat",
+      "channel": "lumen",
+      "avatarAlias": "lumen_avatar"
+    },
+    {
+      "speaker": "Minh",
+      "text": "Sao… mày biết?",
+      "character": "minh_anxious",
+      "tags": [
+        "shake"
+      ]
+    },
+    {
+      "speaker": null,
+      "text": "Trong đầu Minh lóe lên một loạt câu hỏi: ai đang nhìn thấy mình? mình đang tưởng tượng quá mức? hay có thứ gì thật sự đã bị lộ?"
+    }
+  ],
+  "choices": [
+    {
+      "id": "S01_C01",
+      "prompt": "Ngay lúc này, Minh nên bám vào điều gì để không bị cuốn trôi: ranh giới, sự thật, hay phản ứng bản năng?",
+      "options": [
+        {
+          "id": "S01_C01_A",
+          "text": "Chặn Lumen ngay (cắt liên lạc).",
+          "subtext": "Giữ ranh giới và tự chủ, nhưng sẽ phải đối mặt với group chat một mình.",
+          "effects": {
+            "deltas": {
+              "BC": 5,
+              "TrustAI": -15,
+              "SelfEsteem": 5,
+              "RealityAnchor": 5
+            },
+            "setFlags": {
+              "ai_blocked": true
+            }
+          },
+          "nextSceneId": "S02"
+        },
+        {
+          "id": "S01_C01_B",
+          "text": "Hỏi thẳng: “Mày biết bằng cách nào?”",
+          "subtext": "Tiến gần sự thật hơn, nhưng rủi ro lệ thuộc AI tăng.",
+          "effects": {
+            "deltas": {
+              "BC": 5,
+              "TrustAI": 10,
+              "RealityAnchor": -5
+            },
+            "setFlags": {
+              "mystery_ai_tier1": true
+            }
+          },
+          "nextSceneId": "S02"
+        },
+        {
+          "id": "S01_C01_C",
+          "text": "Bỏ qua Lumen, mở group chat để kiểm tra ngay.",
+          "subtext": "Có bằng chứng nhanh, nhưng dễ bị cảm xúc tập thể làm tổn thương sâu hơn.",
+          "effects": {
+            "deltas": {
+              "TrustFriends": -10,
+              "SelfEsteem": -5
+            },
+            "setFlags": {
+              "saw_group_early": true
+            }
+          },
+          "nextSceneId": "S02"
+        }
+      ],
+      "reflectionPrompts": {
+        "summary": "Bạn vừa chọn cách Minh phản ứng với một tín hiệu ‘không nên biết’.",
+        "questions": [
+          "Trong khoảnh khắc này, ‘vật chất’ nào đang tác động mạnh nhất lên ý thức của Minh (đêm khuya, cô đơn, màn hình, tiếng rung điện thoại, áp lực group chat)?",
+          "Nếu muốn kiểm chứng thay vì hoảng loạn, Minh có thể làm hành động thực tiễn nhỏ nào ngay bây giờ?"
+        ]
+      }
+    }
+  ]
+}

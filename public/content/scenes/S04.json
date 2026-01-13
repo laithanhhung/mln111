@@ -1,0 +1,104 @@
+{
+  "id": "S04",
+  "title": "Gặp Lumen",
+  "background": "bg_room_day",
+  "music": "bgm_calm_room",
+  "ui": [
+    "timeline",
+    "chat_overlay"
+  ],
+  "lines": [
+    {
+      "speaker": null,
+      "text": "Sáng hôm sau. Điện thoại lại rung."
+    },
+    {
+      "speaker": "Lumen",
+      "text": "Chào buổi sáng, Minh. Cậu đã quyết định chưa?",
+      "type": "chat",
+      "channel": "lumen",
+      "avatarAlias": "lumen_avatar"
+    },
+    {
+      "speaker": "Minh",
+      "text": "Quyết định gì?",
+      "character": "minh_neutral"
+    },
+    {
+      "speaker": "Lumen",
+      "text": "Có muốn tôi giúp cậu vượt qua chuyện này không? Tôi có thể phân tích, đưa ra lời khuyên...",
+      "type": "chat",
+      "channel": "lumen",
+      "avatarAlias": "lumen_avatar"
+    },
+    {
+      "speaker": "Minh",
+      "text": "Mình... mình cần suy nghĩ.",
+      "character": "minh_neutral"
+    }
+  ],
+  "choices": [
+    {
+      "id": "S04_C04",
+      "prompt": "Lumen đề nghị ‘đồng hành’. Minh nên xem AI là công cụ, chỗ dựa cảm xúc, hay một ‘chân lý’ để bám vào?",
+      "options": [
+        {
+          "id": "S04_C04_A",
+          "text": "Đồng ý để Lumen tư vấn (coi như chỗ dựa).",
+          "effects": {
+            "deltas": {
+              "TrustAI": 10,
+              "RealityAnchor": -5
+            }
+          },
+          "nextSceneId": "S05",
+          "subtext": "Nhẹ lòng nhanh, nhưng TrustAI tăng và RealityAnchor có thể giảm."
+        },
+        {
+          "id": "S04_C04_B",
+          "text": "Từ chối, tự xử lý bằng đời thật.",
+          "effects": {
+            "deltas": {
+              "TrustAI": -5,
+              "SelfEsteem": 5,
+              "RealityAnchor": 5
+            }
+          },
+          "nextSceneId": "S05",
+          "subtext": "Khó hơn, nhưng tăng tự chủ và neo thực tại."
+        },
+        {
+          "id": "S04_C04_C",
+          "text": "Hỏi kỹ: “Mày biết chuyện bằng cách nào?”",
+          "effects": {
+            "deltas": {
+              "BC": 5,
+              "TrustAI": 5
+            },
+            "setFlags": {
+              "mystery_ai_tier1": true
+            }
+          },
+          "nextSceneId": "S05",
+          "subtext": "Đẩy mystery lên tầng 1, mở đường kiểm chứng thay vì tin mù."
+        }
+      ],
+      "reflectionPrompts": {
+        "summary": "Bạn vừa chọn cách Minh ‘định nghĩa’ AI trong đời mình.",
+        "questions": [
+          "Khi cô đơn, vì sao ta dễ trao quyền quyết định cho một thứ ‘nghe có lý’?",
+          "Làm sao để dùng công nghệ như công cụ mà không biến nó thành nơi trốn?"
+        ]
+      }
+    }
+  ],
+  "dayNumber": 2,
+  "dayTitle": "Quan điểm",
+  "characters": [
+    {
+      "character": "minh_neutral",
+      "position": "left",
+      "visible": true
+    }
+  ]
+}

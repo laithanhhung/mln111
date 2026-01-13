@@ -1,0 +1,120 @@
+{
+  "id": "S03",
+  "title": "Trốn hay đối diện",
+  "background": "bg_room_night",
+  "music": "bgm_calm_room",
+  "ui": [
+    "timeline"
+  ],
+  "lines": [
+    {
+      "speaker": "Minh",
+      "text": "Mình gõ một tin nhắn: “Tụi mày làm vậy vui lắm à?”… rồi xóa.",
+      "tags": [
+        "pause"
+      ],
+      "character": "minh_sad"
+    },
+    {
+      "speaker": "Minh",
+      "text": "Gõ lại: “Làm ơn dừng lại.”… rồi xóa.",
+      "tags": [
+        "pause"
+      ],
+      "character": "minh_sad"
+    },
+    {
+      "speaker": null,
+      "text": "Ngón tay Minh dừng ở nút mở group chat. Mở ra là đối mặt. Không mở ra là trốn."
+    },
+    {
+      "speaker": "Minh",
+      "text": "Nếu mình chỉ ngồi đây nghĩ… thì mọi thứ có tự biến mất không?",
+      "tags": [
+        "pause"
+      ],
+      "character": "minh_sad"
+    },
+    {
+      "speaker": "Minh",
+      "text": "Soạn tin nhắn. Xóa. Soạn lại. Xóa.",
+      "character": "minh_sad"
+    },
+    {
+      "speaker": "Minh",
+      "text": "Muốn nói với ai đó. Nhưng sợ.",
+      "character": "minh_sad"
+    },
+    {
+      "speaker": null,
+      "text": "Điện thoại rung. Lumen lại nhắn?"
+    },
+    {
+      "speaker": "Minh",
+      "text": "Hay là... mình nên làm gì khác?",
+      "character": "minh_sad"
+    }
+  ],
+  "choices": [
+    {
+      "id": "S03_C03",
+      "prompt": "Khi tâm trí rối, Minh nên làm gì để ‘neo’ lại thực tại thay vì chìm trong sợ hãi?",
+      "options": [
+        {
+          "id": "S03_C03_A",
+          "text": "Ra ngoài đi bộ/đổi không gian",
+          "effects": {
+            "deltas": {
+              "BC": 5,
+              "RealityAnchor": 15,
+              "SelfEsteem": 5
+            }
+          },
+          "nextSceneId": "S04",
+          "subtext": "Tăng neo thực tại: đổi không gian, hít thở, để ý cơ thể và môi trường."
+        },
+        {
+          "id": "S03_C03_B",
+          "text": "Viết nhật ký để tự soi",
+          "effects": {
+            "deltas": {
+              "BC": 5,
+              "SelfEsteem": 5
+            }
+          },
+          "nextSceneId": "S04",
+          "subtext": "Gọi tên cảm xúc để hiểu mình đang phản ánh điều gì, trước khi hành động."
+        },
+        {
+          "id": "S03_C03_C",
+          "text": "Online với AI cả đêm",
+          "effects": {
+            "deltas": {
+              "TrustAI": 10,
+              "RealityAnchor": -15,
+              "SelfEsteem": -5
+            }
+          },
+          "nextSceneId": "S04",
+          "subtext": "Được an ủi nhanh, nhưng dễ lệ thuộc và mất kiểm chứng đời thật."
+        }
+      ],
+      "reflectionPrompts": {
+        "summary": "Bạn vừa chọn cách Minh tự giữ mình sau cú sốc bị leak.",
+        "questions": [
+          "Trong tình huống bị bêu trước tập thể, điều kiện xã hội nào đang ‘đè’ lên ý thức của Minh mạnh nhất?",
+          "Ý thức có thể tác động trở lại vật chất qua thực tiễn — vậy bước thực tiễn nhỏ nhất Minh có thể làm là gì?"
+        ]
+      }
+    }
+  ],
+  "dayNumber": 1,
+  "dayTitle": "23:47",
+  "characters": [
+    {
+      "character": "minh_sad",
+      "position": "left",
+      "visible": true
+    }
+  ]
+}

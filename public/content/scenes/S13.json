@@ -1,0 +1,93 @@
+{
+  "id": "S13",
+  "title": "Đối mặt",
+  "background": "bg_canteen",
+  "music": "bgm_tension_chat",
+  "ui": [
+    "timeline"
+  ],
+  "lines": [
+    {
+      "speaker": "Lan",
+      "text": "Minh, mình đã tìm ra manh mối.",
+      "character": "lan_encourage"
+    },
+    {
+      "speaker": "Minh",
+      "text": "Manh mối gì?",
+      "character": "minh_neutral"
+    },
+    {
+      "speaker": "Lan",
+      "text": "Timestamp. Vị trí. Ai đã mượn bút của cậu hôm đó.",
+      "character": "lan_encourage"
+    },
+    {
+      "speaker": "Minh",
+      "text": "Vậy là...",
+      "character": "minh_neutral"
+    },
+    {
+      "speaker": "Lan",
+      "text": "Mình nghĩ mình biết rồi. Nhưng cậu có muốn đối mặt không?",
+      "character": "lan_encourage"
+    }
+  ],
+  "choices": [
+    {
+      "id": "S13_C13",
+      "prompt": "Lan đã có manh mối. Minh sẽ đối mặt để lấy lại quyền kiểm soát, hay né tránh để khỏi đau?",
+      "options": [
+        {
+          "id": "S13_C13_A",
+          "text": "Đối mặt trực tiếp",
+          "effects": {
+            "deltas": {
+              "BC": 10,
+              "SelfEsteem": 10,
+              "TrustFriends": 5
+            },
+            "setFlags": {
+              "leak_suspect_hint_2": true
+            }
+          },
+          "nextSceneId": "S14",
+          "subtext": "Đau ngắn hạn nhưng có sự thật và giải tỏa; tăng SelfEsteem và TrustFriends."
+        },
+        {
+          "id": "S13_C13_B",
+          "text": "Bỏ qua, tập trung vào bài thi",
+          "effects": {
+            "deltas": {
+              "BC": -5,
+              "SelfEsteem": -5
+            }
+          },
+          "nextSceneId": "S14",
+          "subtext": "Đỡ căng trước mắt nhưng nỗi ám ảnh còn đó; dễ kéo dài khủng hoảng."
+        }
+      ],
+      "reflectionPrompts": {
+        "summary": "Bạn vừa chọn cách Minh xử lý ‘xã hội’ như một phần điều kiện vật chất.",
+        "questions": [
+          "Vì sao áp lực tập thể có thể trở thành ‘điều kiện vật chất’ tác động mạnh lên ý thức?",
+          "Đối mặt có phải là một hành động thực tiễn để thay đổi hoàn cảnh không?"
+        ]
+      }
+    }
+  ],
+  "dayNumber": 6,
+  "dayTitle": "Đối mặt",
+  "characters": [
+    {
+      "character": "minh_neutral",
+      "position": "left",
+      "visible": true
+    },
+    {
+      "character": "lan_encourage",
+      "position": "right",
+      "visible": true
+    }
+  ]
+}

@@ -1,117 +1,117 @@
 {
-  "id": "S02",
-  "title": "Nhật ký bị leak",
-  "background": "bg_room_night",
-  "music": "bgm_hurt_silence",
-  "ui": [
-    "timeline",
-    "chat_overlay"
-  ],
-  "characters": [
-    {
-      "character": "minh_sad",
-      "position": "left",
-      "visible": true
-    }
-  ],
-  "lines": [
-    {
-      "speaker": null,
-      "text": "Màn hình điện thoại sáng lên. Tin nhắn group chat dồn dập."
-    },
-    {
-      "speaker": null,
-      "text": "Một bức ảnh. Trang nhật ký của Minh. Chụp mờ nhưng vẫn đọc được."
-    },
-    {
-      "speaker": "Minh",
-      "text": "Không...",
-      "character": "minh_sad",
-      "tags": [
-        "shake"
-      ]
-    },
-    {
-      "speaker": null,
-      "text": "Tin nhắn liên tục xuất hiện. Cười cợt. Bàn tán."
-    },
-    {
-      "speaker": "Minh",
-      "text": "Ai... ai đã làm thế này?",
-      "character": "minh_sad"
-    },
-    {
-      "speaker": null,
-      "text": "Tim đập mạnh. Tay run. Muốn trốn đi đâu đó."
-    }
-  ],
-  "choices": [
-    {
-      "id": "S02_C02",
-      "prompt": "Bạn phản ứng thế nào?",
-      "options": [
-        {
-          "id": "S02_C02_A",
-          "text": "Nói thẳng, đặt ranh giới",
-          "effects": {
-            "deltas": {
-              "BC": 10,
-              "TrustFriends": 5,
-              "SelfEsteem": 10
+    "id": "S02",
+    "title": "Nhật ký bị leak",
+    "background": "bg_room_night",
+    "music": "bgm_hurt_silence",
+    "ui": [
+      "timeline",
+      "chat_overlay"
+    ],
+    "characters": [
+      {
+        "character": "minh_sad",
+        "position": "left",
+        "visible": true
+      }
+    ],
+    "lines": [
+      {
+        "speaker": null,
+        "text": "Màn hình điện thoại sáng lên. Tin nhắn group chat dồn dập."
+      },
+      {
+        "speaker": null,
+        "text": "Một bức ảnh. Trang nhật ký của Minh. Chụp mờ nhưng vẫn đọc được."
+      },
+      {
+        "speaker": "Minh",
+        "text": "Không...",
+        "character": "minh_sad",
+        "tags": [
+          "shake"
+        ]
+      },
+      {
+        "speaker": null,
+        "text": "Tin nhắn liên tục xuất hiện. Cười cợt. Bàn tán."
+      },
+      {
+        "speaker": "Minh",
+        "text": "Ai... ai đã làm thế này?",
+        "character": "minh_sad"
+      },
+      {
+        "speaker": null,
+        "text": "Tim đập mạnh. Tay run. Muốn trốn đi đâu đó."
+      }
+    ],
+    "choices": [
+      {
+        "id": "S02_C02",
+        "prompt": "Bạn phản ứng thế nào?",
+        "options": [
+          {
+            "id": "S02_C02_A",
+            "text": "Nói thẳng, đặt ranh giới",
+            "effects": {
+              "deltas": {
+                "BC": 10,
+                "TrustFriends": 5,
+                "SelfEsteem": 10
+              },
+              "setFlags": {
+                "set_boundary": true
+              }
             },
-            "setFlags": {
-              "set_boundary": true
-            }
+            "nextSceneId": "S03"
           },
-          "nextSceneId": "S03"
-        },
-        {
-          "id": "S02_C02_B",
-          "text": "Im lặng chịu",
-          "effects": {
-            "deltas": {
-              "BC": -5,
-              "TrustFriends": -5,
-              "SelfEsteem": -10
-            }
+          {
+            "id": "S02_C02_B",
+            "text": "Im lặng chịu",
+            "effects": {
+              "deltas": {
+                "BC": -5,
+                "TrustFriends": -5,
+                "SelfEsteem": -10
+              }
+            },
+            "nextSceneId": "S03"
           },
-          "nextSceneId": "S03"
-        },
-        {
-          "id": "S02_C02_C",
-          "text": "\"Mình sẽ chứng minh bằng bài viết\"",
-          "effects": {
-            "deltas": {
-              "BC": -10,
-              "SelfEsteem": -5,
-              "RealityAnchor": -5
-            }
-          },
-          "nextSceneId": "S03"
-        }
-      ]
-    }
-  ],
-  "dayNumber": 1,
-  "dayTitle": "23:47",
-  "onEnter": [
-    {
-      "type": "stopBgm",
-      "fadeOutMs": 0
-    },
-    {
-      "type": "delay",
-      "ms": 1000
-    },
-    {
-      "type": "playBgm",
-      "id": "bgm_hurt_silence",
-      "loop": true
-    },
-    {
-      "type": "playSfx",
-      "id": "sfx_message_pop"
-    }
-  ],
-  "cg": "cg_leak_blur"
-}
+          {
+            "id": "S02_C02_C",
+            "text": "\"Mình sẽ chứng minh bằng bài viết\"",
+            "effects": {
+              "deltas": {
+                "BC": -10,
+                "SelfEsteem": -5,
+                "RealityAnchor": -5
+              }
+            },
+            "nextSceneId": "S03"
+          }
+        ]
+      }
+    ],
+    "dayNumber": 1,
+    "dayTitle": "23:47",
+    "onEnter": [
+      {
+        "type": "stopBgm",
+        "fadeOutMs": 0
+      },
+      {
+        "type": "delay",
+        "ms": 1000
+      },
+      {
+        "type": "playBgm",
+        "id": "bgm_hurt_silence",
+        "loop": true
+      },
+      {
+        "type": "playSfx",
+        "id": "sfx_message_pop"
+      }
+    ],
+    "cg": "cg_leak_blur"
+  }

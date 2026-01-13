@@ -1,7 +1,7 @@
 {
   "id": "S16",
   "title": "Epilogue",
-  "background": "bg_stage",
+  "background": "cg_minh_on_stage",
   "music": "bgm_stage_resolve",
   "ui": [
     "timeline"

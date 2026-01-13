@@ -2,10 +2,9 @@ import { Howl } from 'howler';
 
 export class AudioManager {
   private bgm: Howl | null = null;
-  private currentBgmId: string | null = null;
   private sfxCache: Map<string, Howl> = new Map();
 
-  playBgm(id: string, loop: boolean = true): void {
+  playBgm(id: string, _loop: boolean = true): void {
     // Stop current BGM
     if (this.bgm) {
       this.bgm.stop();
@@ -14,11 +13,10 @@ export class AudioManager {
     // For now, we'll use placeholder - in real implementation, load from assets
     // this.bgm = new Howl({
     //   src: [`/assets/audio/bgm/${id}.mp3`],
-    //   loop,
+    //   loop: _loop,
     //   volume: 0.5
     // });
     // this.bgm.play();
-    this.currentBgmId = id;
     console.log(`Playing BGM: ${id}`);
   }
 
@@ -32,19 +30,21 @@ export class AudioManager {
         const stepTime = fadeOutMs / steps;
         
         const fadeInterval = setInterval(() => {
-          const newVolume = Math.max(0, this.bgm!.volume() - stepVolume);
-          this.bgm!.volume(newVolume);
+          if (!this.bgm) {
+            clearInterval(fadeInterval);
+            return;
+          }
+          const newVolume = Math.max(0, this.bgm.volume() - stepVolume);
+          this.bgm.volume(newVolume);
           if (newVolume <= 0) {
             clearInterval(fadeInterval);
             this.bgm.stop();
             this.bgm = null;
-            this.currentBgmId = null;
           }
         }, stepTime);
       } else {
         this.bgm.stop();
         this.bgm = null;
-        this.currentBgmId = null;
       }
     }
   }

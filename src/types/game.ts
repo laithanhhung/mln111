@@ -8,7 +8,7 @@ export interface GameVariables {
 }
 
 export interface GameFlags {
-  [key: string]: boolean | string | number;
+  [key: string]: boolean | string | number | undefined;
   ng_plus?: boolean;
   ai_shortcut_used?: boolean;
   made_team?: boolean;

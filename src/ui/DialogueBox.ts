@@ -50,7 +50,6 @@ export class DialogueBox {
   }
 
   private typeText(text: string, onComplete: () => void): void {
-    this.isTyping = true;
     let index = 0;
     const speed = 30; // ms per character
 
@@ -60,17 +59,19 @@ export class DialogueBox {
         index++;
         setTimeout(type, speed);
       } else {
-        this.isTyping = false;
         onComplete();
       }
     };
 
+    this.isTyping = true;
     type();
   }
 
   skipTyping(): void {
     // This would need to be implemented with a flag to stop typing
-    this.isTyping = false;
+    if (this.isTyping) {
+      this.isTyping = false;
+    }
   }
 
   hide(): void {

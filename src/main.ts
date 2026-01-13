@@ -279,22 +279,23 @@ class Game {
     });
   }
 
-  private showEnding(ending: 'A' | 'B' | 'C' | 'D'): void {
-    const endingTexts = {
-      A: 'Kết thúc A — Minh chọn cách trốn vào ảo/thoát ly thay vì đối diện thực tại.',
-      B: 'Kết thúc B — Minh đã trả giá cho những đường tắt/ảo tưởng nhưng vẫn còn cơ hội sửa sai.',
-      C: 'Kết thúc C — Minh bắt đầu sống biện chứng: nhìn thẳng vào thực tế và dám làm những việc nhỏ nhưng thật.',
-      D: 'Kết thúc D — Minh biết dùng AI như công cụ, kết nối với người thật và chủ động cải biến điều kiện sống.',
-    };
-
-    // 1) Thông báo ending dựa trên BC
-    this.ui.showDialogue(null, endingTexts[ending]).then(() => {
-      // 2) Đánh giá nhân vật dựa trên 5 chỉ số hiện tại
-      const evaluation = this.buildFinalEvaluation();
-      this.ui.showDialogue(null, evaluation);
-      // Người chơi bấm \"Tiếp tục\" để sang epilogue (S16 lines)
-    });
-  }
+  // Method này không được sử dụng nữa vì ending được xử lý trong loadScene() khi load S16
+  // private showEnding(ending: 'A' | 'B' | 'C' | 'D'): void {
+  //   const endingTexts = {
+  //     A: 'Kết thúc A — Minh chọn cách trốn vào ảo/thoát ly thay vì đối diện thực tại.',
+  //     B: 'Kết thúc B — Minh đã trả giá cho những đường tắt/ảo tưởng nhưng vẫn còn cơ hội sửa sai.',
+  //     C: 'Kết thúc C — Minh bắt đầu sống biện chứng: nhìn thẳng vào thực tế và dám làm những việc nhỏ nhưng thật.',
+  //     D: 'Kết thúc D — Minh biết dùng AI như công cụ, kết nối với người thật và chủ động cải biến điều kiện sống.',
+  //   };
+  //
+  //   // 1) Thông báo ending dựa trên BC
+  //   this.ui.showDialogue(null, endingTexts[ending]).then(() => {
+  //     // 2) Đánh giá nhân vật dựa trên 5 chỉ số hiện tại
+  //     const evaluation = this.buildFinalEvaluation();
+  //     this.ui.showDialogue(null, evaluation);
+  //     // Người chơi bấm \"Tiếp tục\" để sang epilogue (S16 lines)
+  //   });
+  // }
 
   private buildFinalEvaluation(): string {
     const vars = this.engine.getStateManager().getVariables();

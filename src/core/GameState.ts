@@ -1,4 +1,4 @@
-import type { GameState, GameVariables, GameFlags, HistoryEntry, ChoiceStats } from '../types/game';
+import type { GameState, GameVariables, GameFlags, HistoryEntry } from '../types/game';
 
 const DEFAULT_VARIABLES: GameVariables = {
   BC: 50,
